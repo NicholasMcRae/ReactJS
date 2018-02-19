@@ -14,13 +14,16 @@ class App extends React.Component {
 
   render(){
     return (
-      <div>
-        <input type="text"
-         onChange={this.update.bind(this)}/>
+      <div>        
          <h1>{this.state.txt}</h1>
+         <Widget update={this.update.bind(this)} />
       </div>
     )
   }
 }
+
+const Widget = (props) =>
+  <input type="text" onChange={props.update}/>
+
 
 export default App
