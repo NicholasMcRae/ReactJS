@@ -1,0 +1,66 @@
+Hello World
+***********
+- shows example
+
+Introducing JSX
+***************
+- not HTML
+- syntax extension to JavaScript
+- comes with full power of JavaScript
+-  produces React 'Elements'
+- Why JSX?
+	- rendering logic is inherently coupled with other UI logic
+	- events
+	- state over time
+	- how data is prepared for display
+	- instead of separating tech, by putting markup and logic in separate files React separates concerns with loosely coupled units called components that contain both
+	- JSX isn't required, but people find it helpful as a visual aid
+- *example of using a variale inside JSX*
+- can put any valid JavaScript expression inside the curly braces in JSX
+- they split JSX over multiple lines, not required but it avoids automatic semicolon insertion
+- JSX expressions become regular JavaScript function calls and evaluate to objects
+- can use it in if statements, for loops, assign to variables, accept it as arguments and return it from functions
+- JSX prevents injection attacks
+
+Rendering Elements
+******************
+- smallest building blocks of React apps
+- describes what you want to see on the screen
+- elements are what components are made of
+- Rendering an element into the DOM
+	- div with root id
+	- everything inside it will be managed by React DOM
+	- applications built with just React usually have a single root DOM node
+	- you may have as many isolated root DOM nodes as you look
+	- pass the element and root div to ReactDOM.render
+- React elements are immutable
+- React only updates what's necessary
+	- React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state
+- in our experience, thinking about how the UI should look at any given moment rather than how to change it over time eliminates a whole class of bugs
+
+Components and Props
+********************
+- Components let you split the UI into independent, reusable pieces, and think about each piece in isolation
+- Conceptually, components are like Javascript functions
+	- They accept arbitrary inputs, called props, and return React elements describing what should appear on the screen
+- Function and class components
+	- a function is a valid react compoent because it accepts a single props object argument with data and returns a react element
+	- we call such components function components because they are literally javascript functions
+- You can also use an ES6 class to define a component
+- Previously we only encountered React elements that represent DOM tags
+- However, elements can also represent user defined components
+- When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object, we call this 'props
+- Note: Always start component names with a capital letter
+- Composing Components
+	- Components can refer to other components in their output
+	- This lets us use the same component abstraction for any level of detail
+- Don't be afraid to split components into smaller components
+- We recommend naming props from the component's own point of view rather than the context in which it is being used
+- Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps
+- A good rule of thumb is that if a part of your UI is used several times, or is complex enough on its own it is a good candidate to be a reusable component
+- Props are Read Only
+	- a component must never modify its own props
+	- must resumble a 'pure' function
+	- React is pretty flexible but it has a single strict rule: All React components must act like pure functions with respect to their props
+- Of course, application UIs are dynamic and change over time
+- In the next section we will introduce the concept of state
