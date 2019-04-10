@@ -106,23 +106,23 @@ State and Lifecycle
 	- This is why state is often called local or encapsulated
 	- a component may choose to pass its state down as props to its child components
 	
-	Handling Events
-	***************
-	- handling events with React elements is similar to handling events on dom elements, with a few syntactic differences
-		- React events are named using camelcase, rather than lower case
-		- With JSX you pass a function as the event handler, rather than a string
-		- you cannot return false to prevent default behavior in React
-		- you must call preventdefault explicitly
-	- When you define a component using an ES6 class, a common pattern is for an event handler to be a method on the class
-	- You have to be careful about the meaning of this in JSX callbacks. In javascript, class methods are not bound by default
-	0 if you forget to bind this.handleClick and pass it to onClick, this will be undefined when the function is actually called
-	- This is not React specific behavior, it is how functions work in Javascript
-	
-	Conditional Rendering
-	*********************
-	- In React you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application
-	- Element Variables
-		- You can use variables to store elements, which can help you conditionally render a part of the component while the rest of the output doesn't change
-	- inline If
-		- you may embed any expressions in JSX by wrapping them in curly braces
-	- Preventing component from rendering
+Handling Events
+***************
+- handling events with React elements is similar to handling events on dom elements, with a few syntactic differences
+	- React events are named using camelcase, rather than lower case
+	- With JSX you pass a function as the event handler, rather than a string
+	- you cannot return false to prevent default behavior in React
+	- you must call preventdefault explicitly
+- When you define a component using an ES6 class, a common pattern is for an event handler to be a method on the class
+- You have to be careful about the meaning of this in JSX callbacks. In javascript, class methods are not bound by default
+0 if you forget to bind this.handleClick and pass it to onClick, this will be undefined when the function is actually called
+- This is not React specific behavior, it is how functions work in Javascript
+
+Conditional Rendering
+*********************
+- In React you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application
+- Element Variables
+	- You can use variables to store elements, which can help you conditionally render a part of the component while the rest of the output doesn't change
+- inline If
+	- you may embed any expressions in JSX by wrapping them in curly braces
+- Preventing component from rendering
