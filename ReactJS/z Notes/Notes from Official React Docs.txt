@@ -126,3 +126,67 @@ Conditional Rendering
 - inline If
 	- you may embed any expressions in JSX by wrapping them in curly braces
 - Preventing component from rendering
+
+Lists and Keys
+**************
+- Rendering multiple components
+	- You can build collections of elements and include them in JSX using curly braces
+- Basic List Component
+	- usually you would render lists inside a component
+	- we can refactor the previous example into a component that accepts an array of numbers and outputs a list of elements
+	- when you run this code you'll be given a warning that a key should be provided for list items
+	- keys help react identify which items have changed, added, or removed
+	- most often you would use IDs from your data as keys
+	- you can use the item index as a last resort
+- Extracting Components with Keys
+	- keys only make sense in the context of the surrounding array
+- Keys must only be unique among siblings
+	- Keys used within arrays should be unique among their siblings, however they don't need to be globally unique
+	- keys serve as a hint to React but they don't get passed to your components
+	- If you need the same value in your component, pass it explicitly as a prop with a different name
+- If the map() body is too nested, it might be a good time to extract a component
+
+Forms
+*****
+- form elements work a little bit differently from other DOM elements, because they naturally keep some internal state
+- It's convenient to have a JavaScript function that handles the submission of the form and has access to the data thtat the user entered into the form
+- standard way to achieve this is with a technique called 'controlled components'
+- Controlled Components
+	- in HTML input, textarea, select maintain their own state and update it based on user input
+	- in React, mutable state is typically kept in the state property of components, updated with setState
+	- the two can be combined by making the React state the 'Single source of truth'
+	- then the react component that renders a form also controls what happens in that form on subsequent user input
+- Handling multiple inputs
+	- when you need to handle multiple controlled input elements, you can add a name attribute to each element 
+- Alternatives to controlled components
+	- can be tedious, so can use uncontrolled components, an alternative technique
+	
+Lifting State Up
+****************
+- often several components need to reflect the same changing data
+- recommend lifting the shared state up to their closest common ancestor
+- Lessons Learned
+	- There should be a single source of truth for any data that changes in a React application
+	- you should rely on the top down data flow
+	- since any state lives in some component and that component alone can change it, the surface area for bugs is greatly reduced
+	- if something can be derived from either props or state, it probably shouldn't be in the state
+	
+Composition vs Inheritance
+**************************
+- React has a poewrful composition model, and we recommend using composition instead of inheritance to reuse code between components
+	- some components don't know their children ahead of time
+	- we recommend that such components use the special children prop to pass children elements directly into their output
+- So what about inheritance?
+	- haven't found any use cases where we would recommend creating component inheritance hierarchies
+	- props and composition giv eyou all the flexibility you need to customize a component's look and behavior
+	
+Thinking in React
+*****************
+- React is, in our opinion, the premier way to build big, fast web apps with JavaScript
+- It has scaled very well for Facebook
+- Start With a Mock
+- 1) Break the UI into a componenet hierarchy
+- 2) Build a Statis Version in React
+- 3) Identify the minimal (but complete) representation of UI state
+- 4) Identify where your state should live
+- 5) Add Inverse data flow
