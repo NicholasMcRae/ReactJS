@@ -1,1 +1,1 @@
-In 2018 I went through a ReactJS tutorial online to become more familiar with how the framework works. Eventually, I plan to revisit React and go into a bit more depth.
+In 2018 I went through a ReactJS tutorial online to become more familiar with how the framework works. Now, in 2019, that I've got myself married and have a bit more free time I'm looking at the framework in more depth.
